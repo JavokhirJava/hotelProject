@@ -7,13 +7,14 @@ import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.persistence.Table;
+
 @Getter
 @Setter
 @Entity
-@Table(name = "comfort")
-public class RoomComfortEntity {
-@Id
-private Integer id;
-@Column(nullable = false)
-private String type;
+@Table
+public class EmployeeType {
+    @Id
+    private Integer id;
+    @Column(nullable = false)
+    private String type;
 }
