@@ -18,7 +18,9 @@ public class GuestEntity {
     private String surname;
     @Column(nullable = false,unique = true)
     private String phone;
+//    @Column(name = "passport_id")
+//    private Integer passportID;
     @OneToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "passport")
+    @JoinColumn(name = "passport_id")
     private PassportEntity passport;
 }

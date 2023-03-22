@@ -9,7 +9,7 @@ import javax.persistence.*;
 @Getter
 @Setter
 @Entity
-@Table
+@Table(name = "employee")
 public class EmployeeEntity {
     @Id @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
@@ -23,6 +23,8 @@ public class EmployeeEntity {
     private String bornYear;
     @Column(nullable = false)
     private Status status;
+//    @Column(name = "employee_id")
+//    private Integer employeeId;
     @OneToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "employee_id")
     private EmployeeType employeeType;
