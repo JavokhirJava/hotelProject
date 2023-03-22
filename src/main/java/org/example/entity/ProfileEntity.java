@@ -1,0 +1,23 @@
+package org.example.entity;
+
+import lombok.Getter;
+import lombok.Setter;
+import org.example.enums.Role;
+
+import javax.persistence.*;
+
+@Getter
+@Setter
+@Entity
+@Table(name = "profile")
+public class ProfileEntity {
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Integer id;
+    @Column(nullable = false)
+    private String name;
+    @Column(nullable = false,unique = true)
+    private String phone;
+    @Column(nullable = false,unique = true)
+    private Role role;
+}
