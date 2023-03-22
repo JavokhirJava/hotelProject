@@ -22,6 +22,7 @@
         <mapping class="org.example.entity.OutcomeEntity"/>
         <mapping class="org.example.entity.CleanedRoomEntity"/>
         <mapping class="org.example.entity.ComplainEntity"/>
+        <mapping class="org.example.entity.ProfileEntity"/>
     </session-factory>
 
 </hibernate-configuration>

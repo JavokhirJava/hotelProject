@@ -18,6 +18,7 @@ public class ProfileEntity {
     private String name;
     @Column(nullable = false,unique = true)
     private String phone;
-    @Column(nullable = false,unique = true)
+    @Column(nullable = false)
+    @Enumerated(EnumType.STRING)
     private Role role;
 }
