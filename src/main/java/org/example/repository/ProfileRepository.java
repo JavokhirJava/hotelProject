@@ -26,4 +26,10 @@ public class ProfileRepository {
         session.close();
         return profile;
     }
+    public ProfileEntity getByPhone(String phone) {
+        Session session = sessionFactory.openSession();
+        ProfileEntity profile = session.find(ProfileEntity.class, phone);
+        session.close();
+        return profile;
+    }
 }

@@ -1,9 +1,8 @@
 package org.example.container;
 
-import org.example.config.Config;
-import org.springframework.context.ApplicationContext;
-import org.springframework.context.annotation.AnnotationConfigApplicationContext;
+
+import org.example.entity.ProfileEntity;
 
 public class ComponentContainer {
-    public static ApplicationContext applicationContext = new AnnotationConfigApplicationContext(Config.class);
+ public static ProfileEntity profile = new ProfileEntity();
 }
