@@ -12,7 +12,7 @@ import javax.persistence.*;
 @Entity
 @Table
 public class EmployeeType {
-    @Id @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Id @GeneratedValue(strategy = GenerationType.SEQUENCE)
     private Integer id;
     @Column(nullable = false)
     private String type;

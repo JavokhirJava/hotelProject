@@ -9,7 +9,6 @@ import javax.persistence.*;
 
 @Getter
 @Setter
-//@ToString
 @Entity
 @Table(name = "room")
 public class RoomEntity {
