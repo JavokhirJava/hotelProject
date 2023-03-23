@@ -6,7 +6,7 @@ import lombok.ToString;
 import org.example.enums.Status;
 
 import javax.persistence.*;
-@ToString
+
 @Getter
 @Setter
 @Entity
@@ -23,9 +23,8 @@ public class EmployeeEntity {
     @Column(name = "born_year",nullable = false)
     private String bornYear;
     @Column(nullable = false)
+    @Enumerated(EnumType.STRING)
     private Status status;
-//    @Column(name = "employee_id")
-//    private Integer employeeId;
     @OneToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "employee_id")
     private EmployeeType employeeType;

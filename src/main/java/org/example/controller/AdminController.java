@@ -20,12 +20,14 @@ public class AdminController {
     private ConvenientController convenientController;
     @Autowired
     private EmployeeTypeController employeeTypeController;
+    @Autowired
+    private EmployeeController employeeController;
 
 
     public void start() {
         boolean b = true;
-        while (b){
-            switch (menu()){
+        while (b) {
+            switch (menu()) {
                 case 1 -> roomMenu();
                 case 2 -> convenientMenu();
                 case 3 -> employeeType();
@@ -35,12 +37,13 @@ public class AdminController {
 //                case 7 -> outCome();
 //                case 8 -> cleanedRooms();
 //                case 9 -> complaints();
-                default -> b=false;
+                default -> b = false;
             }
         }
     }
 
     private void employee() {
+        employeeController.start();
     }
 
     private void employeeType() {
@@ -48,7 +51,7 @@ public class AdminController {
     }
 
     private void convenientMenu() {
-       convenientController.start();
+        convenientController.start();
     }
 
     private void roomMenu() {
