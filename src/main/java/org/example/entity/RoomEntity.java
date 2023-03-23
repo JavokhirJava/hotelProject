@@ -2,12 +2,14 @@ package org.example.entity;
 
 import lombok.Getter;
 import lombok.Setter;
+import lombok.ToString;
 import org.example.enums.RoomType;
 
 import javax.persistence.*;
 
 @Getter
 @Setter
+//@ToString
 @Entity
 @Table(name = "room")
 public class RoomEntity {

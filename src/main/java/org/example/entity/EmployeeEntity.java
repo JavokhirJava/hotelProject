@@ -2,10 +2,11 @@ package org.example.entity;
 
 import lombok.Getter;
 import lombok.Setter;
+import lombok.ToString;
 import org.example.enums.Status;
 
 import javax.persistence.*;
-
+@ToString
 @Getter
 @Setter
 @Entity

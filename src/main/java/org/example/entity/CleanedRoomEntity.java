@@ -2,10 +2,11 @@ package org.example.entity;
 
 import lombok.Getter;
 import lombok.Setter;
+import lombok.ToString;
 
 import javax.persistence.*;
 import java.time.LocalDateTime;
-
+@ToString
 @Getter
 @Setter
 @Entity

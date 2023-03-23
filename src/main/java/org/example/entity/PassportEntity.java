@@ -2,6 +2,7 @@ package org.example.entity;
 
 import lombok.Getter;
 import lombok.Setter;
+import lombok.ToString;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -11,6 +12,7 @@ import java.time.LocalDate;
 
 @Getter
 @Setter
+@ToString
 @Entity
 @Table(name = "passport")
 public class PassportEntity {
