@@ -24,7 +24,8 @@ public class AdminController {
     private EmployeeController employeeController;
     @Autowired
     private GuestController guestController;
-
+    @Autowired
+    private BookingController bookingController;
 
     public void start() {
         boolean b = true;
@@ -35,13 +36,17 @@ public class AdminController {
                 case 3 -> employeeType();
                 case 4 -> employee();
                 case 5 -> guests();
-//                case 6 -> booking();
+                case 6 -> booking();
 //                case 7 -> outCome();
 //                case 8 -> cleanedRooms();
 //                case 9 -> complaints();
                 default -> b = false;
             }
         }
+    }
+
+    private void booking() {
+        bookingController.start();
     }
 
     private void guests() {

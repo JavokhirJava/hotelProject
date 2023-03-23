@@ -1,5 +1,6 @@
 package org.example.repository;
 
+import org.example.entity.EmployeeEntity;
 import org.example.entity.GuestEntity;
 import org.example.entity.PassportEntity;
 import org.example.entity.RoomEntity;
@@ -16,6 +17,15 @@ import java.util.List;
 public class GuestRepository {
     @Autowired
     private SessionFactory sessionFactory;
+
+    public GuestEntity getById(int id) {
+        Session session = sessionFactory.openSession();
+        Query<GuestEntity> query = session.createQuery("FROM GuestEntity where id =:id", GuestEntity.class);
+        query.setParameter("id", id);
+        GuestEntity student = query.getSingleResult();
+        session.close();
+        return student;
+    }
     public void save(GuestEntity entity) {
         Session session = sessionFactory.openSession();
         Transaction transaction = session.beginTransaction();
