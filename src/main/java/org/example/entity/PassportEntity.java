@@ -22,4 +22,6 @@ public class PassportEntity {
     private String given_place;
     @Column(nullable = false)
     private LocalDate given_time;
+    @Column(nullable = false)
+    private LocalDate exp_date;
 }
