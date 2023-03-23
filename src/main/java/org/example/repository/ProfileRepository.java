@@ -5,12 +5,18 @@ import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.Transaction;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.jdbc.core.BeanPropertyRowMapper;
+import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.stereotype.Repository;
+
+import java.util.List;
 
 @Repository
 public class ProfileRepository {
     @Autowired
     private SessionFactory sessionFactory;
+    @Autowired
+    private JdbcTemplate jdbcTemplate;
 
     public void save(ProfileEntity entity) {
         Session session = sessionFactory.openSession();
@@ -27,9 +33,11 @@ public class ProfileRepository {
         return profile;
     }
     public ProfileEntity getByPhone(String phone) {
-        Session session = sessionFactory.openSession();
-        ProfileEntity profile = session.find(ProfileEntity.class, phone);
-        session.close();
-        return profile;
+        String sql = String.format("Select * from profile where phone ='%s';", phone);
+        List<ProfileEntity> list = jdbcTemplate.query(sql, new BeanPropertyRowMapper<>(ProfileEntity.class));
+        if (list.size() > 0) {
+            return list.get(0);
+        }
+        return null;
     }
 }
